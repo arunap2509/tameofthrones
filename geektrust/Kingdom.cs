@@ -6,7 +6,6 @@ namespace TameOfThrones.geektrust
     {
         private string _emblem { get; set; }
         private string _name { get; set; }
-        private Dictionary<char, int> _emblemWordCount { get; set; }
         private Dictionary<char, int> _secretWordCount { get; set; }
         private string _message { get; set; }
 
@@ -15,7 +14,6 @@ namespace TameOfThrones.geektrust
             _emblem = emblem;
             _name = name;
             _message = message;
-            _emblemWordCount = GetEmblemWordCount(emblem);
             _secretWordCount = GetSecretWordCount(emblem);
         }
         
@@ -63,25 +61,6 @@ namespace TameOfThrones.geektrust
                 else
                 {
                     wordCount.Add(c, 1);
-                }
-            }
-
-            return wordCount;
-        }
-
-        private Dictionary<char, int> GetEmblemWordCount(string emblem)
-        {
-            var wordCount = new Dictionary<char, int>();
-
-            foreach (var ch in emblem.ToLower())
-            {
-                if(wordCount.ContainsKey(ch))
-                {
-                    wordCount[ch]++;
-                }
-                else
-                {
-                    wordCount.Add(ch, 1);
                 }
             }
 
