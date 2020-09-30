@@ -15,7 +15,7 @@ namespace TameOfThrones.geektrust
         public void ReturnsKingAndAllies()
         {
             Southeros southeros = new Southeros("D:\\Coding\\DotNet\\TameOfThrones\\geektrust\\input.txt");
-            Assert.Equal("SPACE LAND ICE FIRE", southeros.GetRulerAndAllies());
+            Assert.Equal("SPACE FIRE AIR WATER", southeros.GetRulerAndAllies());
         }
 
         [Fact]
